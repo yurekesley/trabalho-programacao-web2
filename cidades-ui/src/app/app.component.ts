@@ -19,12 +19,12 @@ export class AppComponent implements OnInit {
         {titulo: 'Novo', url: 'cidades/novo', menus: null}
       ]
     }, {
-      titulo: 'Loteria', url: 'loteria',
-       menus: [{titulo: 'Novo Jogo', url: 'loteria/novo-jogo', menus: null},
+      titulo: 'Loteria', url: null,
+       menus: [
+         {titulo: 'Novo Jogo', url: 'loteria', menus: null},
+         {titulo: 'Conferir Jogo', url: 'conferir-jogo', menus: null},
       ]
     }
     ];
   }
-
-
 }

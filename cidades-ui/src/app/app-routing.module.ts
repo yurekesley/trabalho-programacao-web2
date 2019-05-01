@@ -7,6 +7,10 @@ const routes: Routes = [
     path: 'cidades',
     loadChildren: './paginas/cidades/cidades.module#CidadesModule'
   },
+  {
+    path: 'loteria',
+    loadChildren: './paginas/loteria/loteria.module#LoteriaModule'
+  },
   { path: '**', redirectTo: env.ROTA_INICIO, pathMatch: 'full'}
 ];
 

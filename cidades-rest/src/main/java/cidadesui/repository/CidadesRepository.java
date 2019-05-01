@@ -67,4 +67,15 @@ public class CidadesRepository {
 		return null;
 
 	}
+	
+	
+	public void deletar(Long id) {
+		
+		Cidade cidadeADeletar = this.buscarPorID(id);
+		
+		if (cidadeADeletar != null) {
+			this.cidades.remove(cidadeADeletar);
+		}
+		
+	}
 }

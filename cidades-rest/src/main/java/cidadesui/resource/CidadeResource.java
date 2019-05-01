@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -40,6 +41,13 @@ public class CidadeResource {
 	public Response salvar(Cidade cidade) {
 		this.service.salvar(cidade);
 		return Response.status(200).entity(cidade).build();
+	}
+	
+	@DELETE
+	@Path("{id : \\d+}") 
+	public Response deletar(@PathParam("id") Long id) {
+		this.service.deletar(id);
+		return Response.status(200).entity(null).build();
 	}
 
 }

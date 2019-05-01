@@ -27,5 +27,9 @@ public class CidadesService {
 	public void salvar(Cidade cidade) {
 		 this.repository.addCidade(cidade);		
 	}
+	
+	public void deletar(Long id) {
+		this.repository.deletar(id);
+	}
 
 }

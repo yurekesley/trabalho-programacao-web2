@@ -20,5 +20,9 @@ export class CidadesService {
    return this.http.post('cidades', cidade);
   }
 
+  deletar(cidade: Cidade): Observable<Cidade> {
+    return this.http.delete('cidades', cidade.id);
+  }
+
 
 }

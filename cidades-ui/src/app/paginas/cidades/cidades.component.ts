@@ -21,4 +21,17 @@ export class CidadesComponent implements OnInit {
       this.cidades = cidades;
     });
   }
+
+
+  public deletar(cidade: Cidade) {
+    this.service.deletar(cidade).subscribe(res => {
+
+    this.cidades = this.cidades.filter((c) => {
+        return c.id !== cidade.id;
+    });
+
+    alert('Deletado com Sucesso !');
+
+  });
+  }
 }

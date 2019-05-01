@@ -57,7 +57,7 @@ export function marcarComoNaoTocado( formulario: FormGroup) {
 }
 
 
-export function limparControle (controle: AbstractControl) {
+export function limparControle(controle: AbstractControl) {
   controle.reset();
 }
 

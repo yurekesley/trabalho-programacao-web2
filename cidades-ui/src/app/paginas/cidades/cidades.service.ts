@@ -3,11 +3,10 @@ import { HttpService } from '../../services/http.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
-@Injectable()
+@Injectable({ providedIn: 'root'})
 export class CidadesService {
   constructor(private http: HttpService) {
   }
-
   get(): Observable<Cidade[]>  {
     return this.http.get<Cidade>('cidades');
   }
@@ -24,5 +23,8 @@ export class CidadesService {
     return this.http.delete('cidades', cidade.id);
   }
 
+  atualizar(cidade: Cidade): Observable<Cidade> {
+    return this.http.put('cidades', cidade);
+  }
 
 }

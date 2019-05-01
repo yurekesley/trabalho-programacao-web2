@@ -43,6 +43,7 @@ constructor(
 
 
     this.service.salvar(new Cidade(this.formCidade.value)).subscribe(carro => {
+      this.router.navigate(['']);
       alert('Carro Salvo com Sucesso');
     });
   }

@@ -11,6 +11,10 @@ const routes: Routes = [
     path: 'novo',
     loadChildren: './cidades-novo/cidades-novo.module#CidadesNovoModule'
   },
+  {
+    path: 'editar',
+    loadChildren: './cidades-editar/cidades-editar.module#CidadesEditarModule'
+  },
 ];
 
 @NgModule({

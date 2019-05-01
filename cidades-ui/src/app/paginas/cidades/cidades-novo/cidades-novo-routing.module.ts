@@ -1,4 +1,4 @@
-import { CidadesNovoComponent } from "./cidades-novo.component";
+import { CidadesNovoComponent } from './cidades-novo.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 

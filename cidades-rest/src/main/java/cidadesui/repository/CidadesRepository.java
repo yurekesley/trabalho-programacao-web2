@@ -78,4 +78,19 @@ public class CidadesRepository {
 		}
 		
 	}
+
+	public void atualizar(Cidade cidade) {
+
+		Cidade cidadeAAtualizar = this.buscarPorID(cidade.getId());
+		
+		if (cidadeAAtualizar != null ) {
+			cidadeAAtualizar.setNome(cidade.getNome());
+			cidadeAAtualizar.setUf(cidade.getUf());
+			cidadeAAtualizar.setPopulacao(cidade.getPopulacao());
+			cidadeAAtualizar.setPib(cidade.getPib());	
+			cidadeAAtualizar.setDataCriacao(cidade.getDataCriacao());			
+		}
+		
+		
+	}
 }

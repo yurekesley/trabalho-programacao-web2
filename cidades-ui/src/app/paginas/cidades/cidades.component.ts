@@ -1,6 +1,7 @@
 import { Cidade } from '../../model/cidade';
 import { CidadesService } from './cidades.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cidades',
@@ -10,7 +11,9 @@ import { Component, OnInit } from '@angular/core';
 export class CidadesComponent implements OnInit {
 
   cidades: Cidade[];
-  constructor(private service: CidadesService) { }
+  constructor(
+      private service: CidadesService
+    , private router: Router) { }
 
   ngOnInit() {
     this.getCidades();
@@ -33,5 +36,9 @@ export class CidadesComponent implements OnInit {
     alert('Deletado com Sucesso !');
 
   });
+  }
+
+  public editar(cidade: Cidade) {
+    this.router.navigate(['cidades/editar', cidade.id]);
   }
 }

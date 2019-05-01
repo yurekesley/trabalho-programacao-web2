@@ -7,6 +7,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -40,6 +41,12 @@ public class CidadeResource {
 	@POST
 	public Response salvar(Cidade cidade) {
 		this.service.salvar(cidade);
+		return Response.status(200).entity(cidade).build();
+	}
+	
+	@PUT
+	public Response atualizar(Cidade cidade) {
+		this.service.atualizar(cidade);
 		return Response.status(200).entity(cidade).build();
 	}
 	

@@ -9,8 +9,6 @@ export class Cidade {
   constructor(init: Partial<Cidade>) {
     if (init) {
       init.dataCriacao = new Date(init.dataCriacao);
-      init.pib = Number(init.pib);
-      init.populacao = Number(init.populacao);
       Object.assign(this, init);
     }
   }

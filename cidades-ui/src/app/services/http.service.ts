@@ -34,4 +34,9 @@ export class HttpService {
     const url = this.getUrl(`${andPoint}/${ID}`);
     return this.http.delete<T>(url);
   }
+
+  put<T>(andPoint: string, t: T): Observable<any> {
+    const url = this.getUrl(andPoint);
+    return this.http.put(url, t);
+  }
 }

@@ -32,4 +32,8 @@ public class CidadesService {
 		this.repository.deletar(id);
 	}
 
+	public void atualizar(Cidade cidade) {
+		this.repository.atualizar(cidade);
+	}
+
 }

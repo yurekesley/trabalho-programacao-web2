@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+      <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Cadastro de Cidades</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+
+            <div class="row" [formGroup]="formCidade">
+              <div class="col">
+                  <mat-form-field>
+                  <input matInput placeholder="Nome" formControlName="nome">
+                  <mat-error >{{mostrarError(formCidade.get('nome'))}}</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col">
+                  <mat-form-field>
+                  <input matInput placeholder="UF" formControlName="uf">
+                  <mat-error >{{mostrarError(formCidade.get('uf'))}}</mat-error>
+
+                </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-form-field>
+                    <input matInput placeholder="Data Criação" [matDatepicker]="picker" formControlName="dataCriacao">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    <mat-error >{{mostrarError(formCidade.get('dataCriacao'))}}</mat-error>
+                  </mat-form-field>
+              </div>
+              <div class="col">
+                  <mat-form-field>
+                  <input matInput placeholder="População" formControlName="populacao">
+                  <mat-error >{{mostrarError(formCidade.get('populacao'))}}</mat-error>
+                </mat-form-field>
+              </div>
+              <div class="col">
+                <mat-form-field>
+                <input matInput placeholder="Pib" formControlName="pib">
+                <mat-error >{{mostrarError(formCidade.get('pib'))}}</mat-error>
+              </mat-form-field>
+            </div>
+            </div>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button (click)="atualizar()">Atualizar</button>
+            <button mat-button (click)="cancelar()">Cancelar</button>
+          </mat-card-actions>
+        </mat-card>
+  </div>
+</div>

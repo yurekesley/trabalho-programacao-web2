@@ -42,7 +42,7 @@ constructor(
     }
 
 
-    this.service.salvar(this.formCidade.value).subscribe(carro => {
+    this.service.salvar(new Cidade(this.formCidade.value)).subscribe(carro => {
       alert('Carro Salvo com Sucesso');
     });
   }

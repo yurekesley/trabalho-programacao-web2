@@ -12,6 +12,8 @@ public class Cidade {
 	private Date dataCriacao;
 	private BigDecimal populacao;
 	private BigDecimal pib;
+	
+	public Cidade() {}
 
 	public Cidade(Long id, String nome, String uf, Date dataCriacao, BigDecimal populacao, BigDecimal pib) {
 

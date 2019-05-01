@@ -25,8 +25,7 @@ public class CidadesRepository {
 		Cidade fortaleza = new Cidade(1l, "Fortaleza", "CE", new Date(), new BigDecimal(5000.000),
 				new BigDecimal(1000000.000));
 
-		Cidade caucaia = new Cidade(2l, "Caucaia", "CE", new Date(), new BigDecimal(200.000),
-				new BigDecimal(200.000));
+		Cidade caucaia = new Cidade(2l, "Caucaia", "CE", new Date(), new BigDecimal(200.000), new BigDecimal(200.000));
 
 		this.cidades.addAll(Arrays.asList(fortaleza, caucaia));
 	}
@@ -37,11 +36,14 @@ public class CidadesRepository {
 
 	public void addCidade(Cidade cidade) {
 		if (cidade != null && !this.cidades.contains(cidade)) {
+			
+			cidade.setId(this.getLastId());
+			
 			this.cidades.add(cidade);
 		}
 	}
 
-	public Cidade getCidadeByID(Long id) {
+	public Cidade buscarPorID(Long id) {
 
 		Cidade find = null;
 
@@ -55,4 +57,14 @@ public class CidadesRepository {
 		return find;
 	}
 
+	private Long getLastId() {
+
+		if (!this.cidades.isEmpty()) {
+			Cidade cidade = this.cidades.get(this.cidades.size() - 1);
+			return cidade.getId() + 1;
+		}
+
+		return null;
+
+	}
 }

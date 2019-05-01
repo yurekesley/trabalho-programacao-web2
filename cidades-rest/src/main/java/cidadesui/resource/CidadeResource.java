@@ -24,20 +24,21 @@ public class CidadeResource {
 	private CidadesService service;
 
 	@GET
-	public List<Cidade> list() {
+	public List<Cidade> listarCidades() {
 		return this.service.getCidades();
 	}
 
 	@GET
 	@Path("{id : \\d+}") 
-	public Response getUserById(@PathParam("id") Long id) {
-	  Cidade cidade = this.service.getByID(id);		
+	public Response buscarPorID(@PathParam("id") Long id) {
+	  Cidade cidade = this.service.buscarPorID(id);		
 	  return Response.status(200).entity(cidade).build();
 	}
 	
 	
 	@POST
 	public Response salvar(Cidade cidade) {
+		this.service.salvar(cidade);
 		return Response.status(200).entity(cidade).build();
 	}
 

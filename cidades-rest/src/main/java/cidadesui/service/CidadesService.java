@@ -20,10 +20,12 @@ public class CidadesService {
 		return this.repository.getCidades();
 	}
 	
-	public Cidade getByID(Long id) {
-		return this.repository.getCidadeByID(id);
+	public Cidade buscarPorID(Long id) {
+		return this.repository.buscarPorID(id);
 	}
-	
-	
+
+	public void salvar(Cidade cidade) {
+		 this.repository.addCidade(cidade);		
+	}
 
 }

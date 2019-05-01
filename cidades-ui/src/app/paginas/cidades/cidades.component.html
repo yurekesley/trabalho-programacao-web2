@@ -1,0 +1,39 @@
+ <div class="container">
+   <div class="row">
+     <app-tabela [lista]="cidades">
+        <app-coluna valorCabecalho="Nome" atributo="nome"></app-coluna>
+        <app-coluna valorCabecalho="UF" atributo="uf"></app-coluna>
+        <app-coluna valorCabecalho="População" atributo="populacao"></app-coluna>
+        
+          <app-coluna valorCabecalho="Criação" atributo="dataCriacao">
+              <ng-template let-item="item">
+               {{ item.dataCriacao | date: 'dd/MM/yyyy' }}
+              </ng-template>
+          </app-coluna>
+        
+        <app-coluna valorCabecalho="PIB" atributo="pib"></app-coluna>
+
+        <app-coluna valorCabecalho="Ações">
+            <ng-template let-item="item">
+                <button mat-icon-button [matMenuTriggerFor]="menu">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item>
+                      <mat-icon>edit</mat-icon>
+                      <span>Editar</span>
+                    </button>
+                    <button mat-menu-item>
+                        <mat-icon>delete</mat-icon>
+                        <span>Deletar</span>
+                      </button>
+                  </mat-menu>
+
+            </ng-template>
+        </app-coluna>
+
+     </app-tabela>
+   </div>
+ </div>
+
+
